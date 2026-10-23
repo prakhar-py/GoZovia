@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GoZovia – Homestay, Psychology & Ayurveda, Yoga & Wellness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Mulish:wght@400;500;600&family=Noto+Serif+Devanagari:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f0e2; --bg2:#efe6d0; --ink:#1c2b22; --muted:#55604f;
+  --green:#1f5a2e; --green-d:#173f22; --blue:#154a7c; --gold:#b08a3e; --gold-l:#d4b56a;
+  --band:#1f5a2e; --band-ink:#f6f0e2;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#101a14; --bg2:#16231b; --ink:#efe8d6; --muted:#b5b9a6;
+  --green:#6fb87f; --green-d:#0c1510; --blue:#7fb2e0; --gold:#cfae5f; --gold-l:#e2c887;
+  --band:#0c1510; --band-ink:#efe8d6; color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --bg:#101a14; --bg2:#16231b; --ink:#efe8d6; --muted:#b5b9a6;
+  --green:#6fb87f; --green-d:#0c1510; --blue:#7fb2e0; --gold:#cfae5f; --gold-l:#e2c887;
+  --band:#0c1510; --band-ink:#efe8d6; color-scheme:dark;}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.7 'Mulish',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.1;margin:0;letter-spacing:.005em}
+.hi{font-family:'Noto Serif Devanagari','Cormorant Garamond',serif;font-weight:600}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid color-mix(in srgb,var(--gold) 40%,transparent)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;text-decoration:none;color:var(--blue)}
+.brand b{color:var(--gold);font-weight:700}
+nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0;font-size:15px;font-weight:500}
+nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--green)}
+.btn{display:inline-block;padding:13px 28px;background:var(--green);color:#fff;text-decoration:none;font-weight:600;font-size:15px;border:1px solid var(--green);border-radius:2px;transition:background .2s}
+:root[data-theme="dark"] .btn{color:#0c1510}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn{color:#0c1510}}
+.btn:hover{background:var(--green-d);color:#fff}
+.btn.ghost{background:transparent;color:var(--green)}
+.btn.ghost:hover{background:var(--green);color:#fff}
+
+/* ornament frame */
+.frame{position:relative;border:1px solid var(--gold);outline:1px solid color-mix(in srgb,var(--gold) 45%,transparent);outline-offset:-7px}
+.rule{display:flex;align-items:center;gap:14px;color:var(--gold);justify-content:center}
+.rule::before,.rule::after{content:"";height:1px;width:min(120px,22vw);background:linear-gradient(90deg,transparent,var(--gold))}
+.rule::after{transform:scaleX(-1)}
+
+/* hero */
+.hero{padding:72px 0 80px;text-align:center;background:radial-gradient(ellipse at 50% 0,var(--bg2),var(--bg) 70%)}
+.hero .frame{padding:64px 28px 60px;max-width:900px;margin:0 auto}
+.mono{width:120px;height:120px;margin:0 auto 18px;display:block}
+.hero h1{font-size:clamp(40px,7vw,76px);color:var(--blue)}
+.hero h1 b{color:var(--gold)}
+.tm{font-size:.3em;vertical-align:super;color:var(--muted);font-family:'Mulish',sans-serif}
+.tag{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,30px);color:var(--green);margin:22px auto 8px;font-weight:500;font-style:italic}
+.hero p.lead{max-width:560px;margin:14px auto 34px;color:var(--muted)}
+.hero .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* services */
+section{padding:88px 0}
+.head{text-align:center;max-width:620px;margin:0 auto 56px}
+.head h2{font-size:clamp(32px,4.5vw,48px);color:var(--green);margin:14px 0 12px}
+.head p{color:var(--muted);margin:0}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);position:relative}
+.col{padding:8px 36px 12px;text-align:center;position:relative}
+.col+.col::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:1px;background:linear-gradient(transparent,var(--gold),transparent)}
+.col .hi{font-size:23px;color:var(--ink);line-height:1.35}
+.col h3{font-size:25px;color:var(--green);margin:14px 0 18px;letter-spacing:.06em;text-transform:uppercase;font-size:21px;font-weight:700}
+.col svg{width:64px;height:64px;color:var(--gold);margin:6px auto 18px;display:block}
+.col p{color:var(--muted);font-size:16px;margin:0 0 20px}
+.col ul{list-style:none;padding:0;margin:0 0 6px;color:var(--ink);font-size:15.5px}
+.col li{padding:7px 0;border-top:1px solid color-mix(in srgb,var(--gold) 30%,transparent)}
+.col li:last-child{border-bottom:1px solid color-mix(in srgb,var(--gold) 30%,transparent)}
+
+/* about */
+.about{background:var(--bg2)}
+.about .grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about h2{font-size:clamp(32px,4.5vw,48px);color:var(--green)}
+.about p{color:var(--muted);margin:18px 0 0}
+.pillars{display:grid;gap:0}
+.pillars div{padding:22px 0 22px 26px;border-left:2px solid var(--gold)}
+.pillars h3{font-size:26px;color:var(--blue);margin-bottom:4px}
+.pillars p{margin:0;font-size:16px}
+
+/* contact */
+.contact .frame{padding:56px 40px;display:grid;grid-template-columns:1.1fr 1fr;gap:48px;max-width:980px;margin:0 auto}
+.contact h2{font-size:clamp(32px,4.5vw,46px);color:var(--green);margin-bottom:14px}
+.contact p{color:var(--muted);margin:0 0 24px}
+dl{margin:0;display:grid;gap:18px}
+dt{font-size:14px;color:var(--gold);font-weight:600;margin-bottom:2px}
+dd{margin:0;font-size:16.5px;overflow-wrap:anywhere}
+dd a{text-decoration:none;border-bottom:1px solid var(--gold)}
+
+footer{background:var(--band);color:var(--band-ink);padding:26px 0;padding-bottom:calc(26px + env(safe-area-inset-bottom,0px));text-align:center;font-size:14px;border-top:3px double var(--gold)}
+footer span{opacity:.8}
+
+@media(max-width:860px){
+  nav ul{display:none}
+  .trio{grid-template-columns:1fr;gap:44px}
+  .col+.col::before{left:20%;right:20%;top:-22px;bottom:auto;width:auto;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+  .about .grid,.contact .frame{grid-template-columns:1fr;gap:36px}
+  .contact .frame{padding:40px 24px}
+  section{padding:64px 0}.hero{padding:40px 0 56px}.hero .frame{padding:44px 18px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.hero .frame>*{animation:rise .9s ease both}.hero .frame>*:nth-child(2){animation-delay:.12s}.hero .frame>*:nth-child(3){animation-delay:.24s}.hero .frame>*:nth-child(n+4){animation-delay:.36s}
+@media(prefers-reduced-motion:reduce){.hero .frame>*{animation:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="GoZovia home">Go<b>Zovia</b></a>
+    <nav aria-label="Main"><ul>
+      <li><a href="#services">Our services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul></nav>
+    <a class="btn" href="#contact">Enquire</a>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <div class="frame">
+      <svg class="mono" viewBox="0 0 120 120" role="img" aria-label="GoZovia monogram" fill="none">
+        <circle cx="60" cy="60" r="55" stroke="var(--gold)" stroke-width="1.5"/>
+        <circle cx="60" cy="60" r="49" stroke="var(--gold)" stroke-width=".6" opacity=".6"/>
+        <path d="M30 82c-14-18-8-46 14-56" stroke="var(--green)" stroke-width="3" stroke-linecap="round"/>
+        <path d="M30 82c4-10 12-14 20-14-2 8-10 14-20 14z" fill="var(--green)" opacity=".85"/>
+        <text x="46" y="76" font-family="Cormorant Garamond,serif" font-size="54" font-weight="700" fill="var(--blue)">G</text>
+        <text x="66" y="84" font-family="Cormorant Garamond,serif" font-size="46" font-weight="700" fill="var(--gold)">Z</text>
+      </svg>
+      <h1>Go<b>Zovia</b><span class="tm">™</span></h1>
+      <p class="tag">A place to rest, understand and restore.</p>
+      <p class="lead">A homestay, a psychology and Ayurveda practice, and a yoga and wellness space, together under one roof in Krishnagiri, Tamil Nadu.</p>
+      <div class="cta"><a class="btn" href="#services">Explore our services</a><a class="btn ghost" href="#contact">Get in touch</a></div>
+    </div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="head">
+      <div class="rule" aria-hidden="true">❦</div>
+      <h2>Three ways to care for yourself</h2>
+      <p>Stay with us, speak with us, or move with us. Each service stands on its own and works well alongside the others.</p>
+    </div>
+    <div class="trio">
+      <article class="col">
+        <div class="hi" lang="hi">गोज़ोविया<br>होमस्टे</div>
+        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 30 32 10l24 20"/><path d="M14 26v28h36V26"/><path d="M22 46h20M22 46v-8h20v8M24 38v-4h6v4"/></svg>
+        <h3>GoZovia Homestay</h3>
+        <p>A calm, comfortable stay in a homely setting, away from the noise of the city.</p>
+        <ul><li>Quiet, clean rooms</li><li>Home-style hospitality</li><li>Ideal for retreats and longer stays</li></ul>
+      </article>
+      <article class="col">
+        <div class="hi" lang="hi">गोज़ोविया<br>मन की समझ<br>&amp; आयुर्वेद</div>
+        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M26 12c-8 0-14 6-14 14 0 4 1 6 3 8-1 6 3 12 9 12h4V12h-2z"/><path d="M26 12c4 0 6 2 6 4v30"/><path d="M38 52c0-12 6-20 18-22-1 12-7 20-18 22z"/><path d="M38 52c4-8 8-13 14-17"/></svg>
+        <h3>GoZovia Psychology &amp; Ayurveda</h3>
+        <p>Understanding the mind and body together, through counselling and traditional Ayurvedic care.</p>
+        <ul><li>Psychology and counselling</li><li>Ayurvedic consultation</li><li>Care that treats the whole person</li></ul>
+      </article>
+      <article class="col">
+        <div class="hi" lang="hi">गोज़ोविया<br>योग &amp; तंदरुस्ती</div>
+        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="32" cy="12" r="5"/><path d="M32 18v14M22 26c4 3 7 4 10 4s6-1 10-4"/><path d="M12 48c6-2 10-8 20-8s14 6 20 8c-6 6-14 6-20 6s-14 0-20-6z"/></svg>
+        <h3>GoZovia Yoga &amp; Wellness</h3>
+        <p>Guided practice to build strength, flexibility and a steadier, quieter mind.</p>
+        <ul><li>Yoga sessions</li><li>Breathwork and meditation</li><li>Wellness for every level</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="wrap grid">
+    <div>
+      <h2>Wellbeing, without the rush</h2>
+      <p>GoZovia was created around a simple idea: good health is not one thing. It is rest, understanding and movement, and it is easier to find when all three are in the same place.</p>
+      <p>Our approach draws on psychology and the long tradition of Ayurveda and yoga, delivered in a warm, unhurried setting.</p>
+    </div>
+    <div class="pillars">
+      <div><h3>Rest</h3><p>A peaceful place to stay, sleep well and slow down.</p></div>
+      <div><h3>Understand</h3><p>Conversations and consultations that make sense of how you feel.</p></div>
+      <div><h3>Restore</h3><p>Yoga and Ayurvedic practice to rebuild balance, day by day.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="frame">
+      <div>
+        <h2>Plan your visit</h2>
+        <p>Write or call to ask about a stay, a consultation or a yoga session. We will get back to you.</p>
+        <a class="btn" href="mailto:gozoviahealth@gmail.com">Email us</a>
+      </div>
+      <dl>
+        <div><dt>Address</dt><dd>Building No./Flat No.: 1/376/G, Sy. No. 112/4A, Kothur Ayarampali, Haleseebam, Kothur Ayaranapalli, Krishnagiri – 635119</dd></div>
+        <div><dt>Phone</dt><dd><a href="tel:+919036163099">90361 63099</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:gozoviahealth@gmail.com">gozoviahealth@gmail.com</a></dd></div>
+        <div><dt>Website</dt><dd><a href="https://www.gozovia.com">www.gozovia.com</a></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 GoZovia™ &nbsp;<span>GSTIN: 33GZYPR99609 · Krishnagiri, Tamil Nadu</span></div></footer>
+</body>
+</html>
